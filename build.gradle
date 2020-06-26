@@ -1,0 +1,53 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+    id 'java'
+}
+
+group 'com.nuc.zp'
+version '1.0'
+
+apply plugin: 'io.spring.dependency-management'
+
+
+allprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+
+    // JVM 版本号要求
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+
+    ext {
+        set('springBootVersion', "2.2.1.RELEASE")
+    }
+
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        google()
+    }
+
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        compile 'org.springframework.cloud:spring-cloud-starter-stream-rabbit:3.0.0.RELEASE'
+        compile 'org.springframework.cloud:spring-cloud-stream:3.0.0.RELEASE'
+
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        }
+    }
+
+}
+

@@ -1,0 +1,7 @@
+server:
+  port: 8803
+spring:
+  application:
+    name: stream-rabbitmq-consumer8803
+  profiles:
+    active: dlq

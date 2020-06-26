@@ -1,0 +1,7 @@
+server:
+  port: 8802
+spring:
+  application:
+    name: stream-rabbitmq-consumer8802
+  profiles:
+    active: partition

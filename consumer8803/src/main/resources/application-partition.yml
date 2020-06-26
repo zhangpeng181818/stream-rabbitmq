@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: admin
+                password: admin
+      bindings:
+        testInput:
+          destination: testTopict
+          group: same
+          consumer:
+            partitioned: true
+      instance-count: 2
+      instance-index: 1

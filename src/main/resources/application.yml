@@ -1,0 +1,7 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: stream-rabbitmq-producer
+  profiles:
+    active: partition
