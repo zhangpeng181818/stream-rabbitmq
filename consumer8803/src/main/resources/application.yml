@@ -2,6 +2,6 @@ server:
   port: 8803
 spring:
   application:
-    name: stream-rabbitmq-consumer8803
+    name: fluid
   profiles:
-    active: dlq
+    active: mqtt

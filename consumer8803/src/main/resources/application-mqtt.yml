@@ -1,0 +1,33 @@
+spring:
+  # spring.cloud.nacos
+  cloud:
+    nacos:
+      config:
+        group: ICDR
+        server-addr: ${NACOS_SERVER_ADDR:192.168.0.11:8098}
+        file-extension: yml
+      discovery:
+        group: ICDR
+        namespace: ${NACOS_DISCOVERY_NAMESPACE:8445c2b6-100e-4f9c-bc6f-64e75388fd9e}
+        server-addr: ${NACOS_SERVER_ADDR:192.168.0.11:8098}
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 192.168.0.11
+                port: 5672
+                username: rabbit
+                password: rabbit
+      bindings:
+        input:
+          destination: amq.topic
+          group: pumpEventConsumer
+      rabbit:
+        bindings:
+          input:
+            consumer:
+              queueNameGroupOnly: true
+              bindingRoutingKey: icdr.pump.#.up.deviceEvent

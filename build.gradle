@@ -35,11 +35,19 @@ allprojects {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator:2.2.1.RELEASE'
 
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
         compile 'org.springframework.cloud:spring-cloud-starter-stream-rabbit:3.0.0.RELEASE'
         compile 'org.springframework.cloud:spring-cloud-stream:3.0.0.RELEASE'
+
+
+//        implementation('com.alibaba.cloud:spring-cloud-starter-dubbo:2.2.0.RELEASE')
+//        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2.2.0.RELEASE'
+//        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.0.RELEASE'
+//        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:2.2.0.RELEASE'
+
 
     }
 

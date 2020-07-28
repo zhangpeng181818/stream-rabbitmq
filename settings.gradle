@@ -1,4 +1,7 @@
 rootProject.name = 'stream-rabbitmq'
 include 'consumer8802'
 include 'consumer8803'
+include 'consumer8804'
+include 'producer8805'
+findProject(':producer8805')?.name = 'producer8805'
 

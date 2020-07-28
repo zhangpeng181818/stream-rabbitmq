@@ -1,0 +1,10 @@
+server:
+  port: 8805
+spring:
+  application:
+    name: consumer8005
+  rabbitmq:
+    host: 192.168.0.11
+    port: 5672
+    username: guest
+    password: guest
